@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <title>ZenQuote2</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+  </head>
+<!-- NAVBAR
+================================================== -->
+
+
+    <!-- Carousel
+ 
+    ================================================== -->
+ <div class="container-fluid">
+ <div class="row">
+ <div class="col-md-4 col-md-offset-4 text-center">
+ <h1 class="well">ZenQuote2</h1>
+ </div>
+ </div>
+ </div>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+<ol class="carousel-indicators">
+<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+<li data-target="#myCarousel" data-slide-to="1"></li>
+<li data-target="#myCarousel" data-slide-to="2"></li>
+</ol>
+<div class="carousel-inner">
+<div class="item bg bg1 active">
+<div class="container">
+<div class="carousel-caption">
+<h1>Get Zenned!</h1>
+<h1 id="newquote"></h1>
+<p><button class="btn0 btn-lg btn-warning"  role="button">Get Quote</button></p>
+</div>
+</div>
+</div>
+<div class="item bg bg2">
+<div class="container">
+<div class="carousel-caption">
+<h1>Feeling Relaxed?</h1>
+<h1 id="newquote1"></h1>
+<p><button class="btn1 btn-lg btn-primary" role="button">Get Quote</button></p>
+</div>
+</div>
+</div>
+<div class="item bg bg3">
+<div class="container">
+<div class="carousel-caption">
+<h1>Yeah Baby!</h1>
+<h1 id="newquote2"></h1>
+<p><button class="btn2 btn-lg btn-success" role="button">Get Quote</button></p>
+</div>
+</div>
+</div>
+</div>
+<a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+<a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
+
+
+
+      <!-- /END THE FEATURETTES -->
+
+
+      <!-- FOOTER -->
+      <footer class="text-center">
+        <p class="muted-text"><h4 class="well">Created by Arthur Head - Mentored by Arbind</h4></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="bootstrap.js"></script>
+    <script src="docs.js"></script>
+    <script type="text/javascript">
+
+  $(document).ready(function() {
+
+  // ** The way to do this in jQuery **
+
+  // var button = $('.btn');
+  // var newQuote = $('#newquote');
+
+  // button.click(function(){
+  //  newQuote.html("Hi I'm the new quote.");
+  // });
+
+  // ** JavaScript way **
+  var newQuote = $('#newquote');
+
+  renderQuote = function(data) {
+    newQuote.html(data);
+  };
+  getQuote = function() {
+    $.get('https://api.github.com/zen',renderQuote)
+  }
+  $('.btn0').click(function() {
+    getQuote();
+  });
+
+  var newQuoteOne = $('#newquote1');
+
+  renderQuoteOne = function(data) {
+    newQuoteOne.html(data);
+  };
+  getQuoteOne = function() {
+    $.get('https://api.github.com/zen',renderQuoteOne)
+  }
+  $('.btn1').click(function() {
+    getQuoteOne();
+  });
+
+  var newQuoteTwo = $('#newquote2');
+
+  renderQuoteTwo = function(data) {
+    newQuoteTwo.html(data);
+  };
+  getQuoteTwo = function() {
+    $.get('https://api.github.com/zen',renderQuoteTwo)
+  }
+  $('.btn2').click(function() {
+    getQuoteTwo();
+  });
+
+});
+
+
+    </script>
+  </body>
+</html>
