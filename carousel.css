@@ -59,15 +59,15 @@ html, body {
 	background-size:cover;
 }
 .carousel .carousel-inner .bg1 {
-	background-image:url(bg1.jpg);
+	background: #1abc9c;
 	background-position: center top; 
 }
 .carousel .carousel-inner .bg2 {
-	background-image:url(bg2.jpg);
+	background: #2ecc71;
 	background-position: center center; 
 }
 .carousel .carousel-inner .bg3 {
-	background-image:url(bg3.jpg);
+	background: #3498db;
 	background-position: center bottom; 
 }
 
