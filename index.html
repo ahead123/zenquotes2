@@ -60,7 +60,7 @@
 <div class="container">
 <div class="carousel-caption">
 <h1>Feeling Relaxed?</h1>
-<h1 id="newquote1"></h1>
+<h1 id="newquote"></h1>
 <p><button class="btn1 btn-lg btn-primary" role="button">Get Quote</button></p>
 </div>
 </div>
@@ -69,7 +69,7 @@
 <div class="container">
 <div class="carousel-caption">
 <h1>Yeah Baby!</h1>
-<h1 id="newquote2"></h1>
+<h1 id="newquote"></h1>
 <p><button class="btn2 btn-lg btn-success" role="button">Get Quote</button></p>
 </div>
 </div>
@@ -112,41 +112,82 @@
   // });
 
   // ** JavaScript way **
+
+  // Sets the h1 id to a variable
   var newQuote = $('#newquote');
 
+  // var n = $(".carousel").length;
+
+  // Writes the data from the data parameter into the html
   renderQuote = function(data) {
     newQuote.html(data);
   };
+
+  // Calls in data from github and passes the renderQuote function in
   getQuote = function() {
     $.get('https://api.github.com/zen',renderQuote)
   }
-  $('.btn0').click(function() {
-    getQuote();
+
+  // Assigns the getQuote function to all 3 buttons
+  $('.btn0, .btn1, .btn2').click(function() {
+      getQuote();
   });
+  
+  // Assigning btn click to carousel displayed
+  // if (n < 2) {
+  //   $(".btn0").addClass('active');
+  //    $(".btn0").click(function() { 
+  //       getQuote();
+  //       return false;
+  //   });
+  // } else if (n == 2) {
+  //   $(".btn1").addClass('active');
+  //     $(".btn1").click(function() {
+  //       getQuote();
+  //       return false;
+  //   });  
+  // } else if (n > 2) {
+  //   $(".btn2").addClass('active');
+  //     $(".btn2").click(function() {
+  //       getQuote();
+  //       return false;
+  //   });
+  // };
 
-  var newQuoteOne = $('#newquote1');
+  // Attempted conditional with JQuery
+  //  $('.btn0').click(function() {
+  //   getQuote();
+  //   $('btn1').click(function() {
+  //     getQuote();
+  //     $('btn2').click(function() {
+  //       getQuote();
+  //     });
+  //   });
+  // });
 
-  renderQuoteOne = function(data) {
-    newQuoteOne.html(data);
-  };
-  getQuoteOne = function() {
-    $.get('https://api.github.com/zen',renderQuoteOne)
-  }
-  $('.btn1').click(function() {
-    getQuoteOne();
-  });
+  // var newQuoteOne = $('#newquote1');
 
-  var newQuoteTwo = $('#newquote2');
+  // renderQuoteOne = function(data) {
+  //   newQuoteOne.html(data);
+  // };
+  // getQuoteOne = function() {
+  //   $.get('https://api.github.com/zen',renderQuoteOne)
+  // }
+  // $('.btn1').click(function() {
+  //   getQuoteOne();
+  // });
 
-  renderQuoteTwo = function(data) {
-    newQuoteTwo.html(data);
-  };
-  getQuoteTwo = function() {
-    $.get('https://api.github.com/zen',renderQuoteTwo)
-  }
-  $('.btn2').click(function() {
-    getQuoteTwo();
-  });
+  // var newQuoteTwo = $('#newquote2');
+
+  // renderQuoteTwo = function(data) {
+  //   newQuoteTwo.html(data);
+  // };
+  // getQuoteTwo = function() {
+  //   $.get('https://api.github.com/zen',renderQuoteTwo)
+  // }
+  // $('.btn2').click(function() {
+  //   getQuoteTwo();
+  // });
 
 });
 
