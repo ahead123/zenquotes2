@@ -126,13 +126,15 @@
   // Calls in data from github and passes the renderQuote function in
   getQuote = function() {
     $.get('https://api.github.com/zen',renderQuote)
-  }
+  };
 
   // Assigns the getQuote function to all 3 buttons
+  function allButtonsGo() {
   $('.btn0, .btn1, .btn2').click(function() {
       getQuote();
   });
-  
+  };
+  allButtonsGo();
   // Assigning btn click to carousel displayed
   // if (n < 2) {
   //   $(".btn0").addClass('active');
